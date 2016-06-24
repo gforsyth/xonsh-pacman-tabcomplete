@@ -15,4 +15,7 @@ def pacman_completer(prefix, line, begidx, endidx, ctx):
     if "pacman" in line:
         return search_pacman(prefix)
 
-__xonsh_completers__['auto_pacman'] = pacman_completer
+#add to list of completers
+__xonsh_completers__['pacman'] = pacman_completer
+#bump to top of list (otherwise bash completion interferes)
+__xonsh_completers__.move_to_end('pacman', last=False)
