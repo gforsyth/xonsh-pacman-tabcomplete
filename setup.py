@@ -4,7 +4,7 @@ long_description = open('README.md').read()
 
 setup(
     name="xonsh-pacman-tabcomplete",
-    version="0.1.1",
+    version="0.1.2",
     license="MIT",
     url="https://github.com/gforsyth/xonsh-pacman-tabcomplete",
     description="pacman tabcomplete support for the Xonsh shell",
