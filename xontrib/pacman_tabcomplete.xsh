@@ -27,11 +27,11 @@ def pacman_completer(prefix, line, begidx, endidx, ctx):
     """
     Completes pacman remove command with installed package names
     """
-    if 'pacman' and '-R' in line:
+    if 'pacman' in line and '-R' in line:
         return search_pacman(prefix)
-    elif 'pacman' and '-Ss' in line:
+    elif 'pacman' in line and '-Ss' in line:
         return search_pacman(prefix, installed=False, remote=True)
-    elif 'pacman' and '-Qs' in line:
+    elif 'pacman' in line and '-Qs' in line:
         return search_pacman(prefix, installed=False, remote=False)
 
 #add to list of completers
