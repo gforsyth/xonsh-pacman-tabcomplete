@@ -1,8 +1,8 @@
 def search_pacman(query, installed=True, remote=False):
     results = set()
-    #splitting leaves every other line with package version info
     if installed:
-        package_list = $(pacman -Q).split()[::2]
+        #use -q quiet flag to list only package names
+        package_list = $(pacman -Qq).split()
     elif not remote:
         package_list = full_list(remote=False)
     else:
@@ -16,10 +16,9 @@ def search_pacman(query, installed=True, remote=False):
 
 def full_list(remote=False):
     if remote:
-        package_list = [pac.split('/')[-1].split(' ')[0] for a in $(pacman -Ss).split('\n')[::2]]
+        package_list = $(pacman -Ssq).split()
     else:
-        package_list = [pac.split('/')[-1].split(' ')[0] for a in $(pacman -Qs).split('\n')[::2]]
-
+        package_list = $(pacman -Qsq).split()
     return package_list
 
 
