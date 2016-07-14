@@ -1,9 +1,9 @@
 def search_pacman(query, installed=True, remote=False):
     results = set()
-    if installed:
+    if installed is True:
         #use -q quiet flag to list only package names
         package_list = $(pacman -Qq).split()
-    elif not remote:
+    elif remote is False:
         package_list = full_list(remote=False)
     else:
         package_list = full_list(remote)
