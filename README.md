@@ -1,3 +1,7 @@
+# Don't use this!
+
+Bash completion for `pacman` now works in `xonsh` without this `xontrib`.  You don't need to install this anymore.  Leaving it up for the sake of... laziness?  History?  Something.
+
 # xonsh-pacman-tabcomplete
 Better tab completion for pacman in xonsh
 
